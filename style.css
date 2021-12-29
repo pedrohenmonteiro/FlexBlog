@@ -4,7 +4,9 @@
   box-sizing: border-box;
 }
 
-body {
+body,
+input,
+button {
   font-family: "Nunito", sans-serif;
   color: #222222;
 }
@@ -55,6 +57,7 @@ ul {
 
 .menu {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   padding: 16px 10px;
@@ -62,7 +65,7 @@ ul {
 
 .menu-logo a {
   font-size: 2.25rem;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .menu ul {
@@ -164,9 +167,11 @@ ul {
 
 .preco {
   background: #f7f7f7;
-  padding: 70px;
+
+  padding: 60px;
   display: flex;
   flex-wrap: wrap;
+
   gap: 20px;
   align-items: flex-end;
 }
@@ -174,18 +179,23 @@ ul {
 .preco-item {
   flex: 1;
   border: 4px solid #ffffff;
-  padding: 40px;
+  padding: 20px;
+  min-width: 260px;
 }
 
 .preco h2 {
+  max-width: 300px;
+  margin: 20px auto;
   color: #a4a4a4;
   text-align: center;
   margin-bottom: 40px;
 }
 
 .preco span {
+  max-width: 300px;
+  margin: 20px auto;
   display: block;
-  font-weight: 600;
+  font-weight: 700;
   text-align: center;
   border-top: 4px solid #ffffff;
   border-bottom: 4px solid #ffffff;
@@ -196,14 +206,20 @@ ul {
   font-size: 1.375rem;
 }
 
-.preco li {
+.preco ul {
+  max-width: 300px;
+  margin: 20px auto;
   font-size: 1.25rem;
   color: #837c7c;
-  margin: 16px 0;
+
   font-style: italic;
-  position: relative;
+}
+
+.preco li {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
 }
 
 .preco li::after {
@@ -213,11 +229,11 @@ ul {
   width: 6px;
   background: #3878ff;
   border-radius: 50%;
-  position: absolute;
-  right: 0;
 }
 
 .btn {
+  max-width: 300px;
+  margin: 20px auto;
   margin-top: 30px;
   display: block;
   text-align: center;
@@ -231,4 +247,129 @@ ul {
 
 .btn:hover {
   transform: translateY(10px);
+}
+
+@media (max-width: 800px) {
+  .preco {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+/* Qualidade */
+
+.qualidade {
+  padding: 60px 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 10px;
+}
+
+.qualidade-item {
+  flex: 1 1 300px;
+}
+
+.qualidade-item h2 {
+  font-size: 2.25rem;
+  color: #a4a4a4;
+  margin-bottom: 20px;
+}
+
+.qualidade-item h2::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 30px;
+  margin-right: 8px;
+}
+
+.qualidade-item:nth-of-type(3n + 1) h2::before {
+  background: #ae81ff;
+}
+.qualidade-item:nth-of-type(3n + 2) h2::before {
+  background: #f9265e;
+}
+.qualidade-item:nth-of-type(3n + 3) h2::before {
+  background: #66d9eb;
+}
+
+.qualidade-item p {
+  font-size: 1.25rem;
+  line-height: 1.4;
+  color: #7c7c7c;
+}
+
+/* Newsletter */
+
+.newsletter {
+  background: #f7f7f7;
+  padding: 60px calc((100% - 960px) / 2);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.newsletter-info {
+  flex: 1 1 260px;
+  margin: 0 10px;
+}
+
+.newsletter-info h1 {
+  font-size: 3rem;
+  color: #a4a4a4;
+}
+
+.newsletter-info p {
+  font-size: 1.25rem;
+  font-style: italic;
+  max-width: 25ch;
+  color: #7c7c7c;
+  margin-bottom: 10px;
+}
+
+.newsletter-form {
+  flex: 2 1 260px;
+  margin: 0 10px;
+  align-self: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.newsletter-form input {
+  flex: 3 1 200px;
+  font-size: 1.25rem;
+  color: #7c7c7c;
+  font-style: italic;
+  border: 4px solid #2c70ff;
+  background: transparent;
+  padding: 15px 10px;
+  border-radius: 0px;
+}
+
+.newsletter-form button {
+  flex: 1 1 200px;
+  font-size: 2.25rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  background: #2c70ff;
+  color: #ffffff;
+  cursor: pointer;
+  border: none;
+  padding: 15px 10px;
+}
+
+@media (max-width: 800px) {
+  .newsletter-form button {
+    font-size: 1.5rem;
+  }
+}
+
+/* Footer */
+
+.footer {
+  background: #2c70ff;
+  text-align: center;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  font-size: 2rem;
+  color: #ffffff;
 }
